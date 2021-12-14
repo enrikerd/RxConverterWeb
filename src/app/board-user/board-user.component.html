@@ -1,0 +1,57 @@
+<form [formGroup]="form" (ngSubmit)="callExchangeRateOperation()">
+    <h1 class="display-4 text-center">Exchange Rate Operation</h1>
+    <hr>
+    <div class="row mb-2">
+        <div class="form-group col-md-4">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                            <i class="fas fa-key fa-2x"></i>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" formControlName="amount" placeholder="Amount" >
+                </div>
+            </div>
+        </div>
+    <div class="form-group col-md-4">
+      <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text bg-white">
+                      <i class="fas fa-key fa-2x"></i>
+                  </div>
+              </div>
+              <input type="text" class="form-control" formControlName="originCurrency" placeholder="Origin Currency" maxlength="3" minlength="3">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-group col-md-4">
+      <div class="form-group">
+          <div class="input-group">
+              <div class="input-group-prepend">
+                  <div class="input-group-text bg-white">
+                      <i class="fas fa-key fa-2x"></i>
+                  </div>
+              </div>
+              <input type="text" class="form-control" formControlName="destinationCurrency" placeholder="Destination Currency" maxlength="3" minlength="3">
+          </div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label><strong>Result:</strong></label>
+    <p>{{exchangeRateOperationResponse.operationMessage}}</p>
+
+    <p>{{exchangeRateOperationResponse.originDetail}} </p>
+
+    <p>{{exchangeRateOperationResponse.destinationDetail}} </p>
+  </div>
+  </div>
+  <div class="row">
+      <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid" type="submit" >
+          <i class="fas fa-database "></i>
+          Calc</button>
+  </div>
+  
+

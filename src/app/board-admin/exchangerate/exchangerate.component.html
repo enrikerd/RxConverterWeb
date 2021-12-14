@@ -1,0 +1,71 @@
+<form [formGroup]="form" (ngSubmit)="saveExchangeRate()">
+    <div class="form-group col-md-4">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-key fa-2x"></i>
+                    </div>
+                </div>
+                <input type="text" class="form-control" formControlName="originCurrency" placeholder="Symbol">
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-credit-card fa-2x"></i>
+                    </div>
+                </div>
+                <input type="text" class="form-control" formControlName="originCurrencyDescription" placeholder="Origin Currency Description" >
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-4">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-key fa-2x"></i>
+                    </div>
+                </div>
+                <input type="text" class="form-control" formControlName="destinationCurrency" placeholder="Symbol" maxlength="3" minlength="3">
+            </div>
+        </div>
+    </div>
+    <div class="row mb-2">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                        <i class="fas fa-credit-card fa-2x"></i>
+                    </div>
+                </div>
+                <input type="text" class="form-control" formControlName="destinationCurrencyDescription" placeholder="Destination Currency Description" maxlength="50">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+            <div class="form-group col-md-4">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text bg-white">
+                                <i class="fas fa-key fa-2x"></i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" formControlName="conversionFactor" placeholder="Conversion Factor" >
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-success btn-lg btn-block" [disabled]="form.invalid" type="submit" >
+            <i class="fas fa-database "></i>
+            Send</button>
+    </div>
+

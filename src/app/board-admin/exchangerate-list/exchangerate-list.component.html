@@ -1,0 +1,14 @@
+<table class="table table-hover">
+    <thead>
+    <tr *ngFor="let exchangeRate of  exchangeRateService.list">
+        <td>{{exchangeRate.id}}</td>
+        <td>{{exchangeRate.originCurrency}}</td>
+        <td>{{exchangeRate.destinationCurrency}}</td>
+        <td>{{exchangeRate.conversionFactor}}</td>
+        <td>{{exchangeRate.active}}</td>
+        <td>
+            <i class="far fa-edit fa-lg text-info" (click)="editExchangeRate(exchangeRate)"style="cursor: pointer;"></i>
+        </td>
+    </tr>
+    </thead>
+</table>
